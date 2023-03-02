@@ -130,6 +130,6 @@ public class Mainxkcdpwgen{
           symbols--;
         }
       }
-    System.out.print(password);
+    System.out.print(password + "\n");
   }
 }
