@@ -1,4 +1,5 @@
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,7 +11,7 @@ public class xkcdpwgen{
 
     // SHOULD represent the local path of words.txt
     // C:\Users\Danth\IdeaProjects\CS3500\Assignment1-2-3\src\cy2550\words.txt
-
+    //
     File wordsList = new File("/home/danielkamen/CY2550/words.txt");
 
     // reads the file line by like
@@ -97,7 +98,7 @@ public class xkcdpwgen{
 
       String newWord = wordListMaster.get(ranNumInList);
       wordLengthArr[w] = newWord.length();
-      if (randomCapOrNot == 1) {
+      if (randomCapOrNot == 1 && caps > 0) {
         newWord = newWord.substring(0, 1).toUpperCase() + newWord.substring(1);
         password.append(newWord);
         caps--;
