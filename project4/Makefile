@@ -1,5 +1,4 @@
-Mainxkcdpwgen.class: Mainxkcdpwgen.java
-	javac -g Mainxkcdpwgen.java
+xkcdpwgen.class: xkcdpwgen.java
 
 clean:
 	$(RM) *.class
