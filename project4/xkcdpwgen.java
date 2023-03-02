@@ -138,6 +138,6 @@ public class xkcdpwgen{
         symbols--;
       }
     }
-    System.out.print(password);
+    System.out.print(password + "\n");
   }
 }
