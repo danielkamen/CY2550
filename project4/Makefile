@@ -1,10 +1,11 @@
-CLASSPATH = .
-OPTS = -g
-run: Mainxkcdpwgen.class
-	java -cp $(CLASSPATH) Mainxkcdpwgen
+JCC = javac
+
+JFLAGS = -g
+
+default: Mainxkcdpwgen.class
 
 Mainxkcdpwgen.class: Mainxkcdpwgen.java
-	javac $(OPTS) -cp $(CLASSPATH) Mainxkcdpwgen.java
+	$(JCC) $(JFLAGS) Mainxkcdpwgen.java
 
-clean:
-	rm -f Mainxkcdpwgen.class
+clean: 
+	$(RM) *.class
