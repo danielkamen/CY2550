@@ -11,7 +11,6 @@ CLASSES = Mainxkcdpwgen.java
 	
 MAIN = Experiment 
 
-
 default: classes
 
 classes: $(CLASSES:.java=.class)
@@ -22,5 +21,5 @@ run: $(MAIN).class
 
 
 clean:
-        $(RM) *.class
+	$(RM) *.class
 
