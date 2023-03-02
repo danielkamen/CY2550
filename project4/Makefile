@@ -11,8 +11,6 @@ CLASSES = Mainxkcdpwgen.java
 	
 MAIN = Experiment 
 
-default: classes
-
 classes: $(CLASSES:.java=.class)
 
 
