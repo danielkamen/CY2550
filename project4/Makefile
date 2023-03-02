@@ -1,11 +1,26 @@
-JCC = javac
-
 JFLAGS = -g
+JC = javac
+JVM= java 
+FILE=
+.SUFFIXES: .java .class
 
-default: Mainxkcdpwgen.class
+.java.class:
+	$(JC) $(JFLAGS) $*.java
 
-Mainxkcdpwgen.class: Mainxkcdpwgen.java
-	$(JCC) $(JFLAGS) Mainxkcdpwgen.java
+CLASSES = Mainxkcdpwgen.java
+	
+MAIN = Experiment 
 
-clean: 
-	$(RM) *.class
+
+default: classes
+
+classes: $(CLASSES:.java=.class)
+
+
+run: $(MAIN).class
+	$(JVM) $(MAIN) $(FILE)
+
+
+clean:
+        $(RM) *.class
+
