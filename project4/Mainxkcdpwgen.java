@@ -8,8 +8,8 @@ public class Mainxkcdpwgen {
     Random randomNum = new Random();
 
     // SHOULD represent the local path of words.txt
-    File wordsList = new File(
-            "C:\\Users\\Danth\\IdeaProjects\\CS3500\\Assignment1-2-3\\src\\cy2550\\words.txt");
+    File wordsList = new File("").getAbsolutePath();
+    wordsList.concat("words.txt");
 
     // reads the file line by like
     BufferedReader br
