@@ -1,8 +1,7 @@
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class xkcdpwgen{
   public static void main(String[] args) throws Exception {
@@ -10,6 +9,8 @@ public class xkcdpwgen{
     Random randomNum = new Random();
 
     // SHOULD represent the local path of words.txt
+    // C:\Users\Danth\IdeaProjects\CS3500\Assignment1-2-3\src\cy2550\words.txt
+
     File wordsList = new File("/home/danielkamen/CY2550/words.txt");
 
     // reads the file line by like
@@ -54,7 +55,7 @@ public class xkcdpwgen{
           }
           i++;
           break;
-          // how many special symbols are added , only in beginning, end, or between words. This
+        // how many special symbols are added , only in beginning, end, or between words. This
         // implementation uses ascii values 33-47.
         case "-s":
           if (Character.isDigit(args[i+1].charAt(0))) {
@@ -84,12 +85,20 @@ public class xkcdpwgen{
 
 
     // makes a password with words number of words
+    // String newWord = wordListMaster.get(ranNumInList).substring(0, 1).toUpperCase();
+    // makes a password with words number of words
+    if (caps > words) {
+      caps = words;
+    }
     for (int w = 0; w < words; w++) {
       int ranNumInList = randomNum.nextInt(wordListSize);
+
+      int randomCapOrNot = (int) Math.round(Math.random());
+
       String newWord = wordListMaster.get(ranNumInList);
       wordLengthArr[w] = newWord.length();
-      if (caps > 0) {
-        newWord.substring(0, 1).toUpperCase();
+      if (randomCapOrNot == 1) {
+        newWord = newWord.substring(0, 1).toUpperCase() + newWord.substring(1);
         password.append(newWord);
         caps--;
       }
@@ -97,7 +106,6 @@ public class xkcdpwgen{
         password.append(newWord);
       }
     }
-
 
     // will store count of positions where char and num added
     // ex is: appleBottomJeansBoots
@@ -108,7 +116,7 @@ public class xkcdpwgen{
     int[] numAndSymbolsAddedPosition = new int[words + 1];
 
     while (numbers + symbols > 0) {
-    // Replaces some letters with symbols and numbers if there are an
+      // Replaces some letters with symbols and numbers if there are an
       int randSpot = (int) (Math.random() * (words + 1));
       int randNum = (int) (Math.random() * 10);
       int randSym = (int) (Math.random() * (47-33) + 33);
@@ -119,17 +127,17 @@ public class xkcdpwgen{
         position = position + wordLengthArr[i] +  numAndSymbolsAddedPosition[i];
       }
 
-        if (numbers > 0) {
-          password.insert(position, String.valueOf(randNum));
-          numAndSymbolsAddedPosition[randSpot]++;
-          numbers--;
-        } else {
-          password.insert(position, new Character((char)
-                  randSym).toString());
-          numAndSymbolsAddedPosition[randSpot]++;
-          symbols--;
-        }
+      if (numbers > 0) {
+        password.insert(position, String.valueOf(randNum));
+        numAndSymbolsAddedPosition[randSpot]++;
+        numbers--;
+      } else {
+        password.insert(position, new Character((char)
+                randSym).toString());
+        numAndSymbolsAddedPosition[randSpot]++;
+        symbols--;
       }
-    System.out.print(password + "\n");
+    }
+    System.out.print(password);
   }
 }
