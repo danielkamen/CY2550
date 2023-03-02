@@ -1,8 +1,5 @@
-JCC = javac
-
-JFLAGS = -g
-
 Mainxkcdpwgen.class: Mainxkcdpwgen.java
-	$(JCC) $(JFLAGS) Mainxkcdpwgen.java
+	javac -g Mainxkcdpwgen.java
+
 clean:
 	$(RM) *.class
