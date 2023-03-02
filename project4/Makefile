@@ -6,7 +6,7 @@ JC = javac
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = \
-        Main.java 
+        xkcdpwgen.java 
 
 default: classes
 
