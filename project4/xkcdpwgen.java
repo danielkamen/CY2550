@@ -4,7 +4,7 @@ import java.util.Random;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class Mainxkcdpwgen{
+public class xkcdpwgen{
   public static void main(String[] args) throws Exception {
     // initalizes the random num seed
     Random randomNum = new Random();
