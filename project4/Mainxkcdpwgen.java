@@ -1,15 +1,16 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-public class Mainxkcdpwgen {
+public class Mainxkcdpwgen{
   public static void main(String[] args) throws Exception {
     // initalizes the random num seed
     Random randomNum = new Random();
 
     // SHOULD represent the local path of words.txt
-    File wordsList = new File("").getAbsolutePath();
-    wordsList.concat("words.txt");
+    File wordsList = new File("/home/danielkamen/CY2550/words.txt");
 
     // reads the file line by like
     BufferedReader br
