@@ -102,7 +102,10 @@ public class xkcdpwgen{
 
       String newWord = wordListMaster.get(ranNumInList);
       wordLengthArr[w] = newWord.length();
-      if (randomCapOrNot == 1 && caps > 0) {
+      if (caps == words) {
+        newWord = newWord.substring(0, 1).toUpperCase() + newWord.substring(1);
+        password.append(newWord);
+      } else if (randomCapOrNot == 1 && caps > 0) {
         newWord = newWord.substring(0, 1).toUpperCase() + newWord.substring(1);
         password.append(newWord);
         caps--;
@@ -145,6 +148,7 @@ public class xkcdpwgen{
     }
     System.out.print(password);
     System.out.print(System.lineSeparator());
-    System.out.print(System.lineSeparator());
+ System.out.print(System.lineSeparator());
+	
   }
 }
