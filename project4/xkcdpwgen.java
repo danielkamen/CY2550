@@ -12,7 +12,7 @@ public class xkcdpwgen{
     // SHOULD represent the local path of words.txt
     // C:\\Users\\Danth\\IdeaProjects\\CS3500\\Assignment1-2-3\\src\\cy2550\\words.txt
     // 
-    File wordsList = new File("/home/danielkamen/CY2550/words.txt");
+    File wordsList = new File("./words.txt");
 
     // reads the file line by like
     BufferedReader br
