@@ -145,5 +145,6 @@ public class xkcdpwgen{
     }
     System.out.print(password);
     System.out.print(System.lineSeparator());
+    System.out.print(System.lineSeparator());
   }
 }
