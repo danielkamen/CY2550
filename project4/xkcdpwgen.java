@@ -61,7 +61,7 @@ public class xkcdpwgen{
         // how many special symbols are added , only in beginning, end, or between words. This
         // implementation uses ascii values 33-47.
         case "-s":
-        case "-symbols":
+        case "--symbols":
           if (Character.isDigit(args[i+1].charAt(0))) {
             symbols = Integer.parseInt(args[i+1]);
           }
