@@ -43,6 +43,7 @@ public class xkcdpwgen{
 
         // determins how many words at made.
         case "-w":
+        case "--words":
           if (Character.isDigit(args[i+1].charAt(0))) {
             // gets next input and then updates words
             words = Integer.parseInt(args[i+1]);
@@ -51,6 +52,7 @@ public class xkcdpwgen{
           break;
         // determins how many words at capitlize 9first letter only)
         case "-c":
+        case "--caps":
           if (Character.isDigit(args[i+1].charAt(0))) {
             caps = Integer.parseInt(args[i+1]);
           }
@@ -59,6 +61,7 @@ public class xkcdpwgen{
         // how many special symbols are added , only in beginning, end, or between words. This
         // implementation uses ascii values 33-47.
         case "-s":
+        case "-symbols":
           if (Character.isDigit(args[i+1].charAt(0))) {
             symbols = Integer.parseInt(args[i+1]);
           }
@@ -66,6 +69,7 @@ public class xkcdpwgen{
           break;
         // how many numbers are added , only in beginning, end, or between words
         case "-n":
+        case "--numbers":
           if (Character.isDigit(args[i+1].charAt(0))) {
             numbers = Integer.parseInt(args[i+1]);
           }
