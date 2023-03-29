@@ -1,4 +1,5 @@
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,9 +10,9 @@ public class xkcdpwgen{
     Random randomNum = new Random();
 
     // SHOULD represent the local path of words.txt
-    // C:\Users\Danth\IdeaProjects\CS3500\Assignment1-2-3\src\cy2550\words.txt
-
-    File wordsList = new File("/home/danielkamen/CY2550/words.txt");
+    // C:\\Users\\Danth\\IdeaProjects\\CS3500\\Assignment1-2-3\\src\\cy2550\\words.txt
+    // 
+    File wordsList = new File("./words.txt");
 
     // reads the file line by like
     BufferedReader br
@@ -42,6 +43,7 @@ public class xkcdpwgen{
 
         // determins how many words at made.
         case "-w":
+        case "--words":
           if (Character.isDigit(args[i+1].charAt(0))) {
             // gets next input and then updates words
             words = Integer.parseInt(args[i+1]);
@@ -50,6 +52,7 @@ public class xkcdpwgen{
           break;
         // determins how many words at capitlize 9first letter only)
         case "-c":
+        case "--caps":
           if (Character.isDigit(args[i+1].charAt(0))) {
             caps = Integer.parseInt(args[i+1]);
           }
@@ -58,6 +61,7 @@ public class xkcdpwgen{
         // how many special symbols are added , only in beginning, end, or between words. This
         // implementation uses ascii values 33-47.
         case "-s":
+        case "--symbols":
           if (Character.isDigit(args[i+1].charAt(0))) {
             symbols = Integer.parseInt(args[i+1]);
           }
@@ -65,6 +69,7 @@ public class xkcdpwgen{
           break;
         // how many numbers are added , only in beginning, end, or between words
         case "-n":
+        case "--numbers":
           if (Character.isDigit(args[i+1].charAt(0))) {
             numbers = Integer.parseInt(args[i+1]);
           }
@@ -97,7 +102,11 @@ public class xkcdpwgen{
 
       String newWord = wordListMaster.get(ranNumInList);
       wordLengthArr[w] = newWord.length();
-      if (randomCapOrNot == 1) {
+      if (caps == words - w) {
+        newWord = newWord.substring(0, 1).toUpperCase() + newWord.substring(1);
+        password.append(newWord);
+        caps--;
+      } else if (randomCapOrNot == 1 && caps > 0) {
         newWord = newWord.substring(0, 1).toUpperCase() + newWord.substring(1);
         password.append(newWord);
         caps--;
@@ -139,5 +148,8 @@ public class xkcdpwgen{
       }
     }
     System.out.print(password);
+    System.out.print(System.lineSeparator());
+ System.out.print(System.lineSeparator());
+	
   }
 }
