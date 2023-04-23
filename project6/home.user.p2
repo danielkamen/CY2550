@@ -1,0 +1,20 @@
+abi <abi/3.0>,
+include <tunables/global>
+/home/daniel/p2 flags=(audit) {
+ #include <abstractions/base>
+ #include <abstractions/consoles>
+ #include <abstractions/nameservice>
+  capability net_raw,
+  capability setuid,
+  network inet tcp,
+  /home/daniel/p2 mr,
+  /tmp/* rwmlk,
+  /home/daniel/.project2/config w,
+  /var/log/syslog r,
+  /etc/fstab r,
+  /proc/version r,
+  /proc/buddyinfo r,
+  /etc/resolv.conf r,
+  /etc/crontab r,
+  /home/daniel/template r,
+}
